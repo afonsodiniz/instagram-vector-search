@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "instagram-vector-search"
+version = "0.1.0"
+description = "Semantic search for Instagram content using vector databases"
+authors = ["Afonso Diniz <48129227+afonsodiniz@users.noreply.github.com>"]
+readme = "README.md"
+packages = [
+    {include = "instagram_vector_search"}
+]
+package-mode = true
+
+[tool.poetry.dependencies]
+python = ">=3.11"
+chromadb = ">=0.6.3,<0.7.0"
+sentence-transformers = ">=3.4.1,<4.0.0"
+streamlit = ">=1.43.1,<2.0.0"
+polars = ">=1.24.0,<2.0.0"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+instagram-search = "instagram_vector_search.app:main"
